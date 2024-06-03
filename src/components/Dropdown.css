@@ -1,4 +1,4 @@
-#accordion{
+#accordion {
     margin-top: 1rem;
 }
 
@@ -10,4 +10,15 @@
 
     text-align: left;
 
+}
+
+.icon {
+    position: absolute;
+    right: 8px;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+.icon.rotated {
+    transform: translateY(10%) rotate(180deg);
 }

@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as bootstrap from 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './Dropdown.css'
 
 function Dropdown() {
+    const [isCollapsed, setIsCollapsed] = useState(false);
+
     useEffect(() => {
         const collapseElements = document.querySelectorAll('.collapse');
         collapseElements.forEach((element) => {
@@ -19,11 +21,12 @@ function Dropdown() {
                 const collapseInstance = bootstrap.Collapse.getInstance(targetElement);
 
                 if (collapseInstance) {
+                    setIsCollapsed(!isCollapsed);
                     collapseInstance.toggle();
                 }
             });
         });
-    }, []);
+    }, [isCollapsed]);
 
     return (
         <div id="accordion">
@@ -32,8 +35,10 @@ function Dropdown() {
                     <h5 className="mb-0">
                         <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             Collapsible Group Item #1
-                            <AiOutlineCaretDown></AiOutlineCaretDown>
-                            poop
+                            <i className={`icon ${isCollapsed ? 'rotated' : ''}`}>
+                                {isCollapsed ? <AiOutlineCaretUp /> : <AiOutlineCaretDown />}
+                            </i>
+                            
                         </button>
                     </h5>
                 </div>
