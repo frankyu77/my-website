@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+  background-image: linear-gradient(to right, #BC0056, #730062);
+  
+
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  
+}
