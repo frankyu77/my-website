@@ -1,0 +1,15 @@
+.title-container {
+    background-color: red;
+    width: 50%;
+
+    padding: 1rem 0;
+    margin: 0 auto;
+
+    text-align: left;
+}
+.title {
+    padding-bottom: 0.3rem;
+}
+.name {
+    font-size: 35px;
+}
