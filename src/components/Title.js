@@ -1,5 +1,4 @@
 import React from 'react'
-import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai"
 import './Title.css'
 
 function Title() {
@@ -12,9 +11,6 @@ function Title() {
             <div className="intro-container">
                 <p className="intro">Welcome to my website! Check out some of the things I made.</p>
             </div>
-            
-            <AiOutlineCaretDown></AiOutlineCaretDown>
-            <AiOutlineCaretUp></AiOutlineCaretUp>
         </div>
     </>
   )

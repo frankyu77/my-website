@@ -1,0 +1,39 @@
+#accordion {
+    margin-top: 1rem;
+}
+
+.card {
+    width: 50%;
+
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+    text-align: left;
+}
+
+.icon {
+    position: absolute;
+    right: 8px;
+    transition: transform 0.5s ease-in-out;
+    transform-origin: center;
+}
+
+.icon.rotated {
+    position: absolute;
+    transform: translateY(20%) rotate(180deg);
+    transform-origin: center;
+}
+
+.collapse {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: ease-in-out max-height .5s, ease-in-out opacity .5s, ease-in-out height .5s;
+}
+
+.collapse.show {
+    max-height: 500px;
+    opacity: 1;
+    transition: ease-in-out max-height .5s, ease-in-out opacity .5s, ease-in-out height .5s;
+}
+
