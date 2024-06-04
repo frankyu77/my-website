@@ -13,14 +13,14 @@
 
 .icon {
     position: absolute;
-    right: 8px;
+    right: 3%;
     transition: transform 0.5s ease-in-out;
     transform-origin: center;
 }
 
 .icon.rotated {
     position: absolute;
-    transform: translateY(20%) rotate(180deg);
+    transform: translateY(10%) rotate(180deg);
     transform-origin: center;
 }
 

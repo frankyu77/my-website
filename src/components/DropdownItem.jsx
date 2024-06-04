@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai";
+import { AiOutlineCaretDown } from "react-icons/ai";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './DropdownItem.css';
 
@@ -16,7 +16,6 @@ const DropdownItem = ({ id, heading, ContentComponent, isCollapsed, handleToggle
                     setMaxHeight('0px');
                 }, 10);
             }
-            
         }
     }, [isCollapsed]);
 
@@ -31,8 +30,8 @@ const DropdownItem = ({ id, heading, ContentComponent, isCollapsed, handleToggle
                         onClick={() => handleToggle(id)}
                     >
                         {heading}
-                        <i className={`icon ${id} ${isCollapsed ? 'rotated' : ''}`}>
-                            {isCollapsed ? <AiOutlineCaretUp /> : <AiOutlineCaretDown />}
+                        <i className={`icon ${id} ${isCollapsed ? '' : 'rotated'}`}>
+                            <AiOutlineCaretDown />
                         </i>
                     </button>
                 </h5>
