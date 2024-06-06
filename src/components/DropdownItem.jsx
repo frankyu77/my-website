@@ -14,7 +14,7 @@ const DropdownItem = ({ id, heading, ContentComponent, isCollapsed, handleToggle
             } else {
                 setTimeout(() => {
                     setMaxHeight('0px');
-                }, 10);
+                }, 100);
             }
         }
     }, [isCollapsed]);

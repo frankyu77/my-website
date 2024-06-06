@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import DropdownItem from './DropdownItem';
+import DropdownItem from './DropdownItem.jsx';
 import './Dropdown.css'
 import AboutContent from './content/AboutContent.js';
 
@@ -15,7 +15,7 @@ function Dropdown() {
     };
 
     const items = [
-        { id: 1, heading: 'About', ContentComponent: AboutContent}
+        { id: 1, heading: 'About', ContentComponent: AboutContent }
         // { id: 2, heading: 'Education', content: 'The University of British Columbia'},
         // { id: 3, heading: 'Experience', content: 'TESTING EXPERIENCE'}
     ];
@@ -29,7 +29,7 @@ function Dropdown() {
     }, []);
 
     return (
-        <div id="accordion">
+        <div class="panel-group" id='myaccordian'>
             {items.map (item => (
                 <DropdownItem 
                     key={item.id}
@@ -40,6 +40,7 @@ function Dropdown() {
                     handleToggle={handleToggle}
                 />
             ))}
+
         </div>
     );
 }

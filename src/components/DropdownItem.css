@@ -20,7 +20,7 @@
 
 .icon.rotated {
     position: absolute;
-    transform: translateY(10%) rotate(180deg);
+    transform: translateY(10%) rotate(-180deg);
     transform-origin: center;
 }
 
@@ -28,12 +28,12 @@
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: ease-in-out max-height .5s, ease-in-out opacity .5s, ease-in-out height .5s;
+    transition: max-height 1.5s ease-in-out, opacity 1.5s ease-in-out;
 }
 
 .collapse.show {
-    max-height: 500px;
+    max-height: auto;
     opacity: 1;
-    transition: ease-in-out max-height .5s, ease-in-out opacity .5s, ease-in-out height .5s;
+    /* transform-origin: top; */
 }
 
