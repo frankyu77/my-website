@@ -7,3 +7,17 @@
     margin-top: 0;
     margin-bottom: -3%;
 }
+
+.pic {
+    float: left;
+    width: 50%;
+    padding: 5px;
+    text-align: center;
+    font-size: small;
+}
+
+.pictures {
+    content: "";
+    clear: both;
+    display: table;
+}

@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import DropdownItem from './DropdownItem.jsx';
 import './Dropdown.css'
 import AboutContent from './content/AboutContent.js';
+import ProjectContent from './content/ProjectContent.js';
 
 function Dropdown() {
     const [collapsedStates, setCollapsedStates] = useState({});
@@ -15,8 +16,8 @@ function Dropdown() {
     };
 
     const items = [
-        { id: 1, heading: 'About', ContentComponent: AboutContent }
-        // { id: 2, heading: 'Education', content: 'The University of British Columbia'},
+        { id: 1, heading: 'About', ContentComponent: AboutContent },
+        { id: 2, heading: 'Projects', ContentComponent: ProjectContent},
         // { id: 3, heading: 'Experience', content: 'TESTING EXPERIENCE'}
     ];
 

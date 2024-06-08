@@ -6,15 +6,19 @@ import './DropdownItem.css';
 const DropdownItem = ({ id, heading, ContentComponent, isCollapsed, handleToggle }) => {
     const contentRef = useRef(null);
     const [maxHeight, setMaxHeight] = useState('0px');
+    const [opacity, setOpacity] = useState(0);
 
     useEffect(() => {
         if (contentRef.current) {
             if (!isCollapsed) {
                 setMaxHeight(`${contentRef.current.scrollHeight}px`);
+                setOpacity(1);
             } else {
+                setMaxHeight(`${contentRef.current.scrollHeight}px`);
+                setOpacity(0);
                 setTimeout(() => {
                     setMaxHeight('0px');
-                }, 100);
+                }, 10);
             }
         }
     }, [isCollapsed]);
@@ -24,7 +28,7 @@ const DropdownItem = ({ id, heading, ContentComponent, isCollapsed, handleToggle
             <div className="card-header" id={`heading${id}`}>
                 <h5 className="mb-0">
                     <button
-                        className="btn btn-link collapsed"
+                        className="btn collapsed"
                         aria-expanded={!isCollapsed}
                         aria-controls={`collapse${id}`}
                         onClick={() => handleToggle(id)}
@@ -40,7 +44,12 @@ const DropdownItem = ({ id, heading, ContentComponent, isCollapsed, handleToggle
                 id={`collapse${id}`}
                 className={`collapse ${isCollapsed ? '' : 'show'}`}
                 aria-labelledby={`heading${id}`}
-                style={{ maxHeight }}
+                style={{ 
+                    maxHeight: maxHeight,
+                    opacity: opacity,
+                    transition: 'max-height 1s ease-in-out, opacity 1s ease-in-out' }}
+
+                // style={{ maxHeight }, {transition: max-height 1.5s}}
                 ref={contentRef}
             >
                 <div className="card-body">
