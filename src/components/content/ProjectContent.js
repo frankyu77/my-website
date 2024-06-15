@@ -6,6 +6,8 @@ function ProjectContent() {
         <div className='top'>
             <div className="projectContent">
                 <Link to='/blackjack'>Blackjack</Link>
+                <br />
+                <Link to='/insightubc'>Insight UBC</Link>
             </div>
         </div>
     )

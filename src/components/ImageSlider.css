@@ -1,0 +1,59 @@
+.slider {
+    height: 100%;
+    position: relative;
+}
+
+.leftArrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 5%;
+    font-size: 45px;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+}
+.leftArrow:hover {
+    /* color: rgb(210, 208, 208); */
+    color: grey;
+}
+
+.rightArrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 5%;
+    font-size: 45px;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+}
+.rightArrow:hover {
+    /* color: rgb(210, 208, 208); */
+    color: grey;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.dotContainer {
+    display: flex;
+    justify-content: center;
+
+}
+
+.dots {
+    margin: -0.5rem 3px;
+    cursor: pointer;
+    font-size: 35px;
+    color: grey;
+}
+.dots:hover {
+    color: lightgray;
+}

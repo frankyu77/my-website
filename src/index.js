@@ -6,10 +6,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './custom.scss';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Blackjack from './routes/Blackjack';
+import InsightUBC from './routes/InsightUBC';
 
 const router = createBrowserRouter([
     {path : '/', element: <App />},
-    {path : '/blackjack', element: <Blackjack />}
+    {path : '/blackjack', element: <Blackjack />},
+    {path : '/insightubc', element: <InsightUBC />}
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

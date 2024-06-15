@@ -6,79 +6,16 @@ import bjEnd from '../images/bj-end.png';
 import bjGame from '../images/bj-game.png';
 import bjHome from '../images/bj-home.png';
 import bjSetup from '../images/bj-setup.png';
+import ImageSlider from '../components/ImageSlider';
 
 function Blackjack() {
-  const [slideIndex, setSlideIndex] = useState(1);
-
-  useEffect(() => {
-    showSlides(slideIndex);
-  }, [slideIndex]);
-
-  const showSlides = useCallback((n) => {
-    let i;
-    const slides = document.getElementsByClassName("mySlides");
-    const dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {
-      setSlideIndex(1);
-      return;
-    }
-    if (n < 1) {
-      setSlideIndex(slides.length);
-      return;
-    }
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    if (slides[slideIndex - 1]) {
-      slides[slideIndex - 1].style.display = "block";
-    }
-    if (dots[slideIndex - 1]) {
-      dots[slideIndex - 1].className += " active";
-    }
-  }, [slideIndex]);
-
-  function plusSlides(n) {
-    setSlideIndex((prevIndex) => {
-      let newIndex = prevIndex + n;
-      if (newIndex > 5) {
-        newIndex = 1;
-      } else if (newIndex < 1) {
-        newIndex = 5;
-      }
-      return newIndex;
-    });
-  }
-
-  function currentSlide(n) {
-    setSlideIndex(n);
-  }
-
-  // function showSlides(n) {
-  //   let i;
-  //   const slides = document.getElementsByClassName("mySlides");
-  //   const dots = document.getElementsByClassName("dot");
-  //   if (n > slides.length) {
-  //     setSlideIndex(1);
-  //   }
-  //   if (n < 1) {
-  //     setSlideIndex(slides.length);
-  //   }
-  //   for (i = 0; i < slides.length; i++) {
-  //     slides[i].style.display = "none";
-  //   }
-  //   for (i = 0; i < dots.length; i++) {
-  //     dots[i].className = dots[i].className.replace(" active", "");
-  //   }
-  //   if (slides[slideIndex - 1]) {
-  //     slides[slideIndex - 1].style.display = "block";
-  //   }
-  //   if (dots[slideIndex - 1]) {
-  //     dots[slideIndex - 1].className += " active";
-  //   }
-  // }
+  const slides = [
+    { url: bjHome, title: "home" },
+    { url: bjSetup, title: "setup" },
+    { url: bjBet, title: "bet" },
+    { url: bjGame, title: "game" },
+    { url: bjEnd, title: "end" },
+  ];
 
   return (
     <div className='blackjack'>
@@ -108,49 +45,11 @@ function Blackjack() {
             to rematch, save, or quit the game. The user is also able to save an instance of their game in the middle of the round as well.
           </p>
 
-          <div className="slideshow-container">
-            <div className="mySlides fade">
-              <div className="numbertext">1 / 5</div>
-              <img src={bjHome} style={{ width: '100%' }} alt="Home Screen" />
-              <div className="text">Home Screen</div>
-            </div>
-
-            <div className="mySlides fade">
-              <div className="numbertext">2 / 5</div>
-              <img src={bjSetup} style={{ width: '100%' }} alt="Deck Setup" />
-              <div className="text">Deck Setup</div>
-            </div>
-
-            <div className="mySlides fade">
-              <div className="numbertext">3 / 5</div>
-              <img src={bjBet} style={{ width: '100%' }} alt="Betting" />
-              <div className="text">Betting</div>
-            </div>
-
-            <div className="mySlides fade">
-              <div className="numbertext">4 / 5</div>
-              <img src={bjGame} style={{ width: '100%' }} alt="Game" />
-              <div className="text">Game</div>
-            </div>
-
-            <div className="mySlides fade">
-              <div className="numbertext">5 / 5</div>
-              <img src={bjEnd} style={{ width: '100%' }} alt="Ending Screen Example" />
-              <div className="text">Ending Screen Example</div>
-            </div>
-
-            <button className="prev" onClick={() => plusSlides(-1)}>&#10094;</button>
-            <button className="next" onClick={() => plusSlides(1)}>&#10095;</button>
+          <div className='slider-container'>
+            <ImageSlider slides={slides} />
           </div>
-          <br />
 
-          <div style={{ textAlign: 'center' }}>
-            <span className="dot" onClick={() => currentSlide(1)}></span>
-            <span className="dot" onClick={() => currentSlide(2)}></span>
-            <span className="dot" onClick={() => currentSlide(3)}></span>
-            <span className="dot" onClick={() => currentSlide(4)}></span>
-            <span className="dot" onClick={() => currentSlide(5)}></span>
-          </div>
+
         </div>
       </div>
     </div>
