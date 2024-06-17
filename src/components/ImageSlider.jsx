@@ -23,10 +23,10 @@ const ImageSlider = ({ slides }) => {
     return (
         <div className="slider">
             <div className="leftArrow" onClick={goToPrevious}>
-                ⇦
+                《&nbsp;&nbsp;
             </div>
             <div className="rightArrow" onClick={goToNext}>
-                ⇨
+                &nbsp;&nbsp;》
             </div>
             <div className="slide" style={{ backgroundImage: `url(${slides[currentIndex].url})` }} />
             <div className="dotContainer">

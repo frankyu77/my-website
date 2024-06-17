@@ -35,3 +35,9 @@
     word-wrap: break-word;
     text-align: left; /* Ensure text is aligned to the left */
 }
+
+.slider-container {
+    width: 82%;
+    height: 21rem;
+    margin: 0 auto;
+}

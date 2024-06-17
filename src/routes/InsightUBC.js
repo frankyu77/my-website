@@ -1,6 +1,22 @@
-import React from 'react'
+import React from 'react';
+import insightAdd from '../images/insight-add.png';
+import insightAddSuccess from '../images/insight-add-success.png';
+import insightRemove from '../images/insight-remove-list.png';
+import insightList from '../images/insight-list-remove.png';
+import insightBar from '../images/insight-bar.png';
+import insightPie from '../images/insight-pie.png';
+import ImageSlider from '../components/ImageSlider';
 
 function InsightUBC() {
+    const slides = [
+        { url: insightAdd, title: "Add" },
+        { url: insightAddSuccess, title: "Add Success" },
+        { url: insightRemove, title: "Remove" },
+        { url: insightList, title: "List" },
+        { url: insightBar, title: "Bar Graph" },
+        { url: insightPie, title: "Pie Graph" },
+    ]
+
     return (
         <div className='insight'>
             <div className="title-container">
@@ -19,6 +35,13 @@ function InsightUBC() {
 
                     <br />
 
+                    <div className='slider-container'>
+                        <ImageSlider slides={slides} />
+                    </div>
+
+                    <br />
+                    <br />
+
                     <h5>Features</h5>
                     <p>
                         <strong>UBC Course Data:</strong>
@@ -29,7 +52,7 @@ function InsightUBC() {
                                 courses with averages above 90 from 2004 to 2008.
                             </li>
                             <li>
-                                <strong>Data management:</strong> The API allows for adding, removing, and listing course data, providing comprehensive management 
+                                <strong>Data management:</strong> The API allows for adding, removing, and listing course data, providing comprehensive management
                                 capabilities.
                             </li>
                             <li>
@@ -40,7 +63,7 @@ function InsightUBC() {
                         <strong>UBC Buildings and Rooms Data:</strong>
                         <ul>
                             <li>
-                                <strong>Querying:</strong> Users can query detailed information about campus buildings and rooms, such as room capacity and precise location 
+                                <strong>Querying:</strong> Users can query detailed information about campus buildings and rooms, such as room capacity and precise location
                                 details (latitude and longitude).
                             </li>
                             <li>
@@ -56,18 +79,18 @@ function InsightUBC() {
                         <strong>Backend Development</strong>
                         <ul>
                             <li>
-                            <strong>Language and Tools:</strong> Implemented in TypeScript with extensive use of promises and asynchronous code. Yarn was used as the package manager to 
-                            streamline dependency management and scripts.
+                                <strong>Language and Tools:</strong> Implemented in TypeScript with extensive use of promises and asynchronous code. Yarn was used as the package manager to
+                                streamline dependency management and scripts.
                             </li>
                             <li>
-                            <strong>Query Processing:</strong> Utilized a tree structure to implement query operators like WHERE, AND, and OR, enabling complex and efficient data querying.
+                                <strong>Query Processing:</strong> Utilized a tree structure to implement query operators like WHERE, AND, and OR, enabling complex and efficient data querying.
                             </li>
                             <li>
-                                <strong>HTML and ZIP Processing:</strong> Used the tree adaptor functionalities from the Parse5 library to extract information from HTML files and the JSZip 
+                                <strong>HTML and ZIP Processing:</strong> Used the tree adaptor functionalities from the Parse5 library to extract information from HTML files and the JSZip
                                 library to read zip files uploaded by users, enhancing the API's ability to handle various input formats.
                             </li>
                             <li>
-                                <strong>Testing Frameworks:</strong> Employed Mocha and Chai for comprehensive testing, including black box, unit, glass box, and integration tests. Created 
+                                <strong>Testing Frameworks:</strong> Employed Mocha and Chai for comprehensive testing, including black box, unit, glass box, and integration tests. Created
                                 numerous JSON files to limit test the boundaries and functionality of the application.
                             </li>
                         </ul>
@@ -78,7 +101,7 @@ function InsightUBC() {
                                 <strong>Framework:</strong> Utilized React.js to build a user-friendly interface for interacting with the API.
                             </li>
                             <li>
-                                <strong>API Testing:</strong> Used Postman to test and validate the API endpoints thoroughly.
+                                <strong>API Testing:</strong> Used Postman to test and validate the API endpoints thoroughly, including requests for POST, PUT, GET, and DELETE.
                             </li>
                         </ul>
 
@@ -86,23 +109,31 @@ function InsightUBC() {
 
                         <h5>Development Process</h5>
                         <p>
-                        The project was a collaborative effort with a partner, and we adopted Agile methodologies, holding weekly SCRUM meetings to 
-                        track progress and address any issues promptly. This experience provided valuable insights into industry practices and the dynamics of 
-                        collaborative software development. Additionally, creating useful pull requests and multiple issues helped structure the project more 
-                        effectively, fostering better organization and communication within the team.
+                            The project was a collaborative effort with a partner, and we adopted Agile methodologies, holding weekly SCRUM meetings to
+                            track progress and address any issues promptly. This experience provided valuable insights into industry practices and the dynamics of
+                            collaborative software development. Additionally, creating useful pull requests and multiple issues helped structure the project more
+                            effectively, fostering better organization and communication within the team.
                         </p>
 
                         <br />
 
                         <h5>Challenges</h5>
                         <p>
-                        The primary challenge encountered during this project was understanding and effectively using promises and asynchronous code in 
-                        TypeScript. Asynchronous programming can be complex, especially when managing multiple asynchronous operations and ensuring proper 
-                        error handling. 
+                            The primary challenge encountered during this project was understanding and effectively using promises and asynchronous code in
+                            TypeScript. Asynchronous programming can be complex, especially when managing multiple asynchronous operations and ensuring proper
+                            error handling, but having the ability to work on this project for 4 months has helped me significantly improve my understanding of
+                            asynchronous code.
                         </p>
                     </p>
 
                 </div>
+
+                <div className='footer-slider'>
+                    <div className='footer-slide'>
+                        
+                    </div>
+                </div>
+
             </div>
         </div>
     );
