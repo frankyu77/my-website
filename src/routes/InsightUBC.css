@@ -4,7 +4,7 @@
 
     height: 100%;
     width: 100%;
-    position: fixed;
+    position: relative;
     left: 0;
     top: 0;
     z-index: 0;
@@ -24,20 +24,76 @@
 
     text-align: left;
 }
+
 .title {
     padding-bottom: 0.3rem;
 }
+
 .name {
     font-size: 35px;
 }
 
 .description-container {
     word-wrap: break-word;
-    text-align: left; /* Ensure text is aligned to the left */
+    text-align: left;
+    /* Ensure text is aligned to the left */
 }
 
 .slider-container {
     width: 82%;
     height: 21rem;
     margin: 0 auto;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.footer-slider {
+    overflow: hidden;
+    position: relative;
+    bottom: 0;
+    white-space: nowrap;
+
+
+    padding: 0 0 60px 0;
+}
+.footer-slider:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 100%;
+    background: linear-gradient(to left, transparent, white);
+    content: "";
+    z-index: 2;
+}
+.footer-slider:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, white);
+    content: "";
+    z-index: 2;
+}
+.footer-slider:hover .footer-slide {
+    animation-play-state: paused;
+}
+
+.footer-slide {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+}
+
+.footer-slide img {
+    height: 10rem;
+    margin: 0 1rem;
 }
